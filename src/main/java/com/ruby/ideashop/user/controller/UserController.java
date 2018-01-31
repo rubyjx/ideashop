@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 /**
  * @author xinjin
@@ -26,6 +28,7 @@ public class UserController {
     @RequestMapping(value = "/v1",method = RequestMethod.POST)
     public  String  addUser(UserSaveVo userSaveVo){
         User user=new User();
+       // request.setAttribute("aaa","bbb");
         return userService.addUser(user);
     }
     /**
