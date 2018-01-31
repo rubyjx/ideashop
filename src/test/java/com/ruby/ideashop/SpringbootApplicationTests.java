@@ -1,4 +1,4 @@
-package com.ruby.springboot;
+package com.ruby.ideashop;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
