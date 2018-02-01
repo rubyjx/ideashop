@@ -5,7 +5,7 @@ import com.ruby.ideashop.pojo.user.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
-
+@Repository
 public interface UserMapper {
     int countByExample(UserExample example);
 
