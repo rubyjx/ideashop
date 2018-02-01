@@ -1,9 +1,10 @@
-package com.ruby.ideashop.user.dao;
+package com.ruby.ideashop.dao.user;
 
-import com.ruby.ideashop.user.pojo.User;
-import com.ruby.ideashop.user.pojo.UserExample;
+import com.ruby.ideashop.pojo.user.User;
+import com.ruby.ideashop.pojo.user.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 public interface UserMapper {
     int countByExample(UserExample example);

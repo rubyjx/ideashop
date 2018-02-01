@@ -1,4 +1,4 @@
-package com.ruby.ideashop.user.pojo;
+package com.ruby.ideashop.pojo.user;
 
 import java.util.ArrayList;
 import java.util.List;

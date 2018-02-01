@@ -1,14 +1,16 @@
-package com.ruby.ideashop.user.controller;
+package com.ruby.ideashop.controller.user;
 
-import com.ruby.ideashop.user.pojo.User;
-import com.ruby.ideashop.user.service.UserService;
-import com.ruby.ideashop.user.vo.UserSaveVo;
+import com.ruby.ideashop.pojo.user.User;
+import com.ruby.ideashop.service.user.UserService;
+import com.ruby.ideashop.vo.user.UserSaveVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 /**
@@ -28,6 +30,12 @@ public class UserController {
     @RequestMapping(value = "/v1",method = RequestMethod.POST)
     public  String  addUser(UserSaveVo userSaveVo){
         User user=new User();
+        user.setAge("10");
+        user.setMobile("3424235432");
+        user.setPassword("1243243");
+        user.setRole("1");
+        user.setSex("1");
+        user.setUserName("zahgn");
        // request.setAttribute("aaa","bbb");
         return userService.addUser(user);
     }
@@ -41,16 +49,20 @@ public class UserController {
     /**
      * 查询用户详情
      */
+    @ResponseBody
     @RequestMapping(value = "/v1/{id}",method = RequestMethod.GET)
-    public String selectById(){
-        return null;
+    public String selectById(@PathVariable("id") String id){
+        int id1 = Integer.parseInt(id);
+        userService.findUserById(id1);
+        return "11111111111";
     }
     /**
      * 查询用户列表
      */
     @RequestMapping(value = "/v1",method = RequestMethod.GET)
     public String selectByList(){
-        return null;
+        List<User> list=userService.findAllUser();
+        return "success";
     }
 
 }

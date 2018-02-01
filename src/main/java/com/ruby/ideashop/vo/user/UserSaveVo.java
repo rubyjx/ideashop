@@ -1,4 +1,4 @@
-package com.ruby.ideashop.user.vo;
+package com.ruby.ideashop.vo.user;
 
 public class UserSaveVo {
     //id
